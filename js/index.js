@@ -51,9 +51,8 @@ window.onload = () => {
 
 const displayCards = (gifs, i) => {
     var card =
-        `<div class="col-sm-2" style="margin:1em;">
-            <iframe src="${gifs[i].embed_url}" class="card-img-top" style="border:none; height:200px;"></iframe>
-            
+        `<div class="col-sm-2" style="margin:1.5em;">
+            <iframe src="${gifs[i].embed_url}" height="200" frameBorder="0" class="giphy-embed"></iframe>  
         </div>`
     content.insertAdjacentHTML('beforeend', card);
 }
