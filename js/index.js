@@ -53,7 +53,7 @@ window.onload = () => {
 
 const displayCards = (gifs, i) => {
     var card =
-        `<div class="col-sm-2 mx-sm-5" style="margin:1em;">
+        `<div class="col-sm-2" style="margin:1em;">
             <iframe src="${gifs[i].embed_url}" class="card-img-top" style="border:none;"></iframe>
             <h3 class="text-primary text-center">${gifs[i].title}</h3>
         </div>`
