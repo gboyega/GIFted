@@ -10,7 +10,6 @@ search.addEventListener("click", () => {
     request.onload = () => {
         if (request.status >= 200 && request.status < 400) {
             var data = JSON.parse(request.responseText);
-            console.log(data);
             var gifs = data.data;
             content.innerHTML = "";
             for (var i = 0; i < gifs.length; i++) {
@@ -34,7 +33,6 @@ window.onload = () => {
     request.onload = () => {
         if (request.status >= 200 && request.status < 400) {
             var data = JSON.parse(request.responseText);
-            console.log(data);
             var gifs = data.data;
             content.innerHTML = "";
             for (var i = 0; i < gifs.length; i++) {
@@ -54,8 +52,8 @@ window.onload = () => {
 const displayCards = (gifs, i) => {
     var card =
         `<div class="col-sm-2" style="margin:1em;">
-            <iframe src="${gifs[i].embed_url}" class="card-img-top" style="border:none;"></iframe>
-            <h3 class="text-primary text-center">${gifs[i].title}</h3>
+            <iframe src="${gifs[i].embed_url}" class="card-img-top" style="border:none; height:200px;"></iframe>
+            
         </div>`
     content.insertAdjacentHTML('beforeend', card);
 }
