@@ -28,6 +28,10 @@ search.addEventListener("click", () => {
 
 window.onload = () => {
     url = `https://api.giphy.com/v1/gifs/trending?api_key=btcsURItKXprtrtpnmDkJtiVoTp268Q8&limit=50&rating=G`;
+    getData(url);
+}
+
+const getData = (url) => {
     var request = new XMLHttpRequest();
     request.open('GET', url);
     request.onload = () => {
@@ -38,6 +42,8 @@ window.onload = () => {
             for (var i = 0; i < gifs.length; i++) {
                 displayCards(gifs, i);
             }
+        } else if (request.status >= 400 && request.status < 500) {
+            window.alert("Please refresh or try again in a few moments.");
         } else {
             window.alert("There's a problem contacting the server, Please refresh or try again in a few moments.");
         };
@@ -51,8 +57,8 @@ window.onload = () => {
 
 const displayCards = (gifs, i) => {
     var card =
-        `<div class="col-sm-2" style="margin:1.5em;">
-            <iframe src="${gifs[i].embed_url}" height="200" frameBorder="0" class="giphy-embed"></iframe>  
+        `<div class="col-sm-2" style="margin:1em;">
+            <iframe src="${gifs[i].embed_url}" height="180" frameBorder="0" class="giphy-embed"></iframe>  
         </div>`
     content.insertAdjacentHTML('beforeend', card);
 }
